@@ -1,5 +1,5 @@
-﻿using DG.Tweening;
-using System.Collections;
+﻿using System.Collections;
+using DG.Tweening;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -218,14 +218,14 @@ public class PlayerController : MonoBehaviour
 
 		if (slopeAngle >= 45f && slopeAngle >= 0)
 		{
-			wallrunDirection = Quaternion.AngleAxis(90, Vector3.up) * normal;
+			// wallrunDirection = Quaternion.AngleAxis(90, Vector3.up) * normal;
 			wallrunNormal = normal;
 
 			StartWallrun(false);
 		}
 		else if (slopeAngle <= -45f && slopeAngle <= 0)
 		{
-			wallrunDirection = Quaternion.AngleAxis(-90, Vector3.up) * normal;
+			// wallrunDirection = Quaternion.AngleAxis(-90, Vector3.up) * normal;
 			wallrunNormal = normal;
 
 			StartWallrun(true);
@@ -239,40 +239,61 @@ public class PlayerController : MonoBehaviour
 
 		slopeAngle = Vector3.Angle(normal, Vector3.up);
 
-		if (!isWallrunning)
-		{
-			if (slopeAngle >= 45f && slopeAngle >= 0)
-			{
-				wallrunDirection = Quaternion.AngleAxis(90, Vector3.up) * normal;
-				wallrunNormal = normal;
+		// if (!isWallrunning)
+		// {
+		// 	if (slopeAngle >= 45f && slopeAngle >= 0)
+		// 	{
+		// 		wallrunDirection = Quaternion.AngleAxis(90, Vector3.up) * normal;
+		// 		wallrunNormal = normal;
 
-				StartWallrun(false);
-			}
-			else if (slopeAngle <= -45f && slopeAngle <= 0)
-			{
-				wallrunDirection = Quaternion.AngleAxis(-90, Vector3.up) * normal;
-				wallrunNormal = normal;
+		// 		StartWallrun(false);
+		// 	}
+		// 	else if (slopeAngle <= -45f && slopeAngle <= 0)
+		// 	{
+		// 		wallrunDirection = Quaternion.AngleAxis(-90, Vector3.up) * normal;
+		// 		wallrunNormal = normal;
 
-				StartWallrun(true);
-			}
-		}
+		// 		StartWallrun(true);
+		// 	}
+		// }
 
 		if (collision.contactCount > 0)
 		{
 			foreach (ContactPoint contact in collision.contacts)
 			{
 				slopeAngle = Vector3.Angle(contact.normal, Vector3.up);
+				// float e = 90;
 
+				//! Smooth rotation aka wallrun assist
+				// // cast a ray to the right of the player object
+				// if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.right), out RaycastHit hit, 30))
+				// {
+				// 	// orient the Moving Object's Left direction to Match the Normals on his Right
+				// 	var RunnerRotation = Quaternion.FromToRotation(Vector3.left, hit.normal);
+
+				// 	//Smooth rotation
+				// 	transform.rotation = Quaternion.Slerp(transform.rotation, RunnerRotation, Time.deltaTime * 10);
+				// }
+
+				//! stuff
 				if (slopeAngle >= 45f && slopeAngle >= 0)
 				{
-					wallrunDirection = Quaternion.AngleAxis(90, Vector3.up) * contact.normal;
+					// e *= Mathf.Round(Vector3.Dot(transform.rotation.eulerAngles, contact.normal));
+					// wallrunDirection = Quaternion.AngleAxis(e, Vector3.up) * contact.normal;
+
+					// Calculate wallrun direction vector
+					wallrunDirection = Vector3.ProjectOnPlane(transform.forward, contact.normal);
 					wallrunNormal = contact.normal;
 
 					Wallrun();
 				}
 				else if (slopeAngle <= -45f && slopeAngle <= 0)
 				{
-					wallrunDirection = Quaternion.AngleAxis(-90, Vector3.up) * contact.normal;
+					// e *= Mathf.Round(Vector3.Dot(transform.rotation.eulerAngles, contact.normal));
+					// wallrunDirection = Quaternion.AngleAxis(e, Vector3.up) * contact.normal;
+
+					// Calculate wallrun direction vector
+					wallrunDirection = Vector3.ProjectOnPlane(transform.forward, contact.normal);
 					wallrunNormal = contact.normal;
 
 					Wallrun();
@@ -296,18 +317,18 @@ public class PlayerController : MonoBehaviour
 		jumpsLeft = maxJumps;
 		isWallrunning = true;
 
-		//// e
-		//Vector3 rotDir = Vector3.ProjectOnPlane(groundNormal, Vector3.up);
-		//Quaternion rotation = Quaternion.AngleAxis(-90f, Vector3.up);
-		//rotDir = rotation * rotDir;
-		//float angle = Vector3.SignedAngle(Vector3.up, groundNormal, Quaternion.AngleAxis(90f, rotDir) * groundNormal);
-		//angle -= 90;
-		//angle /= 180;
-		//Vector3 playerDir = transform.forward;
-		//Vector3 normal = new Vector3(groundNormal.x, 0, groundNormal.z);
+		// e
+		// Vector3 rotDir = Vector3.ProjectOnPlane(wallrunNormal, Vector3.up);
+		// Quaternion rotation = Quaternion.AngleAxis(-90f, Vector3.up);
+		// rotDir = rotation * rotDir;
+		// float angle = Vector3.SignedAngle(Vector3.up, wallrunNormal, Quaternion.AngleAxis(90f, rotDir) * wallrunNormal);
+		// angle -= 90;
+		// angle /= 180;
+		// Vector3 playerDir = transform.forward;
+		// Vector3 normal = new Vector3(wallrunNormal.x, 0, wallrunNormal.z);
 
-		//float camRot = Vector3.Cross(playerDir, normal).y * angle;
-		//// e
+		// float camRot = Vector3.Cross(playerDir, normal).y * angle;
+		// e
 
 		//float someAngle = 0;
 		//DOTween.To(() => someAngle, x => someAngle = x, cameraRotationAmount * camRot, cameraRotateSpeed)
@@ -350,6 +371,9 @@ public class PlayerController : MonoBehaviour
 	{
 		//float angle = Vector3.Dot(wallrunDirection, transform.forward);
 		//camera.transform.eulerAngles = new Vector3(camera.transform.eulerAngles.x, camera.transform.eulerAngles.y, cameraRotationAmount * angle);
+
+		// Stick to wall
+		// rb.AddForce(-wallrunNormal * 100);
 
 		if (inputs[0] && canMoveFAndB && localVelocity.z < maxSpeed && localVelocity.x < maxSpeed)
 		{
