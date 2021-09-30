@@ -1,5 +1,17 @@
 {
 	"recommendations": [
-		"fabriciohod.unity-dev-pack"
+		"wmaurer.change-case",
+		"jorgeserrano.vscode-csharp-snippets",
+		"ms-dotnettools.csharp",
+		"aaron-bond.better-comments",
+		"revrenlove.c-sharp-utilities",
+		"unity.unity-debug",
+		"eamodio.gitlens",
+		"ms-vsliveshare.vsliveshare",
+		"christian-kohler.path-intellisense",
+		"alefragnani.project-manager",
+		"slevesque.shader",
+		"amlovey.shaderlabvscodefree",
+		"kleber-swf.unity-code-snippets"
 	]
 }
