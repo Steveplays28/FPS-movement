@@ -379,3 +379,31 @@ System memory in use after: 187.0 MB.
 Unloading 14 unused Assets to reduce memory usage. Loaded Objects now: 3016.
 Total: 29.731880 ms (FindLiveObjects: 2.744855 ms CreateObjectMapping: 1.002920 ms MarkObjects: 25.746118 ms  DeleteObjects: 0.231201 ms)
 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.113282 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for OSXStandalone target not found
+Multiple plugins with the same name 'discord_game_sdk' (found at 'Assets/Plugins/x86_64/discord_game_sdk.bundle' and 'Assets/Plugins/x86_64/discord_game_sdk.dylib'). That means one or more plugins are set to be compatible with Editor. Only one plugin at the time can be used by Editor.
+
+Refreshing native plugins compatible for Editor in 9.46 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in 19.583 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Multiple plugins with the same name 'discord_game_sdk' (found at 'Assets/Plugins/x86_64/discord_game_sdk.bundle' and 'Assets/Plugins/x86_64/discord_game_sdk.dylib'). That means one or more plugins are set to be compatible with Editor. Only one plugin at the time can be used by Editor.
+
+Refreshing native plugins compatible for Editor in 2.40 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2479 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 187.0 MB.
+System memory in use after: 187.2 MB.
+
+Unloading 14 unused Assets to reduce memory usage. Loaded Objects now: 3018.
+Total: 23.794877 ms (FindLiveObjects: 1.593388 ms CreateObjectMapping: 1.102867 ms MarkObjects: 20.862685 ms  DeleteObjects: 0.218001 ms)
+

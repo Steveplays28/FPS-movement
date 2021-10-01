@@ -3,6 +3,7 @@
 [Oo]bj/
 [Bb]uild/
 [Bb]uilds/
+[Ll]ogs/
 Assets/AssetStoreTools*
 
 # Visual Studio cache directory
@@ -29,7 +30,7 @@ ExportedObj/
 *.pidb.meta
 *.pdb.meta
 
-# Unity3D Generated File On Crash Reports
+# Unity3D generated file on crash reports
 sysinfo.txt
 
 # Builds
