@@ -370,8 +370,17 @@ public class PlayerController : MonoBehaviour
 
 	public void Wallrun()
 	{
-		// float angle = Vector3.Dot(transform.forward, wallrunDirection);
-		// camera.transform.eulerAngles = new Vector3(camera.transform.eulerAngles.x, camera.transform.eulerAngles.y, cameraRotationAmount * angle);
+		// Calculate dot product
+		float dotProduct = Vector3.Dot(transform.forward.normalized, wallrunDirection.normalized);
+		if (transform.rotation.eulerAngles.y > 90 && transform.rotation.eulerAngles.y < 270)
+		{
+			dotProduct *= -1;
+		}
+
+		// Use dot product to rotate camera
+		camera.transform.eulerAngles = new Vector3(camera.transform.eulerAngles.x, camera.transform.eulerAngles.y, cameraRotationAmount * dotProduct);
+
+		Debug.Log("Dot product: " + dotProduct);
 
 		// Stick to wall
 		// rb.AddForce(-wallrunNormal * 100);
