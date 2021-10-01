@@ -59,6 +59,7 @@ public class PlayerController : MonoBehaviour
 	private void Start()
 	{
 		maxSpeed = walkMaxSpeed;
+		Application.targetFrameRate = 30;
 	}
 
 	private void Update()
@@ -369,8 +370,8 @@ public class PlayerController : MonoBehaviour
 
 	public void Wallrun()
 	{
-		//float angle = Vector3.Dot(wallrunDirection, transform.forward);
-		//camera.transform.eulerAngles = new Vector3(camera.transform.eulerAngles.x, camera.transform.eulerAngles.y, cameraRotationAmount * angle);
+		// float angle = Vector3.Dot(transform.forward, wallrunDirection);
+		// camera.transform.eulerAngles = new Vector3(camera.transform.eulerAngles.x, camera.transform.eulerAngles.y, cameraRotationAmount * angle);
 
 		// Stick to wall
 		// rb.AddForce(-wallrunNormal * 100);
