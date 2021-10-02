@@ -222,14 +222,14 @@ public class PlayerController : MonoBehaviour
 			// wallrunDirection = Quaternion.AngleAxis(90, Vector3.up) * normal;
 			wallrunNormal = normal;
 
-			StartWallrun(false);
+			StartWallrun(collision.GetContact(0));
 		}
 		else if (slopeAngle <= -45f && slopeAngle <= 0)
 		{
 			// wallrunDirection = Quaternion.AngleAxis(-90, Vector3.up) * normal;
 			wallrunNormal = normal;
 
-			StartWallrun(true);
+			StartWallrun(collision.GetContact(0));
 		}
 	}
 
@@ -237,33 +237,13 @@ public class PlayerController : MonoBehaviour
 	{
 		Vector3 normal = collision.GetContact(0).normal;
 		float slopeAngle;
-
 		slopeAngle = Vector3.Angle(normal, Vector3.up);
-
-		// if (!isWallrunning)
-		// {
-		// 	if (slopeAngle >= 45f && slopeAngle >= 0)
-		// 	{
-		// 		wallrunDirection = Quaternion.AngleAxis(90, Vector3.up) * normal;
-		// 		wallrunNormal = normal;
-
-		// 		StartWallrun(false);
-		// 	}
-		// 	else if (slopeAngle <= -45f && slopeAngle <= 0)
-		// 	{
-		// 		wallrunDirection = Quaternion.AngleAxis(-90, Vector3.up) * normal;
-		// 		wallrunNormal = normal;
-
-		// 		StartWallrun(true);
-		// 	}
-		// }
 
 		if (collision.contactCount > 0)
 		{
 			foreach (ContactPoint contact in collision.contacts)
 			{
 				slopeAngle = Vector3.Angle(contact.normal, Vector3.up);
-				// float e = 90;
 
 				//! Smooth rotation aka wallrun assist
 				// // cast a ray to the right of the player object
@@ -279,9 +259,6 @@ public class PlayerController : MonoBehaviour
 				//! stuff
 				if (slopeAngle >= 45f && slopeAngle >= 0)
 				{
-					// e *= Mathf.Round(Vector3.Dot(transform.rotation.eulerAngles, contact.normal));
-					// wallrunDirection = Quaternion.AngleAxis(e, Vector3.up) * contact.normal;
-
 					// Calculate wallrun direction vector
 					wallrunDirection = Vector3.ProjectOnPlane(transform.forward, contact.normal);
 					wallrunNormal = contact.normal;
@@ -290,9 +267,6 @@ public class PlayerController : MonoBehaviour
 				}
 				else if (slopeAngle <= -45f && slopeAngle <= 0)
 				{
-					// e *= Mathf.Round(Vector3.Dot(transform.rotation.eulerAngles, contact.normal));
-					// wallrunDirection = Quaternion.AngleAxis(e, Vector3.up) * contact.normal;
-
 					// Calculate wallrun direction vector
 					wallrunDirection = Vector3.ProjectOnPlane(transform.forward, contact.normal);
 					wallrunNormal = contact.normal;
@@ -310,7 +284,7 @@ public class PlayerController : MonoBehaviour
 	#endregion
 
 	#region Wallrunning
-	public void StartWallrun(bool leftSide)
+	public void StartWallrun(ContactPoint contact)
 	{
 		isGrounded = true;
 		rb.useGravity = false;
@@ -318,25 +292,31 @@ public class PlayerController : MonoBehaviour
 		jumpsLeft = maxJumps;
 		isWallrunning = true;
 
-		// e
-		// Vector3 rotDir = Vector3.ProjectOnPlane(wallrunNormal, Vector3.up);
-		// Quaternion rotation = Quaternion.AngleAxis(-90f, Vector3.up);
-		// rotDir = rotation * rotDir;
-		// float angle = Vector3.SignedAngle(Vector3.up, wallrunNormal, Quaternion.AngleAxis(90f, rotDir) * wallrunNormal);
-		// angle -= 90;
-		// angle /= 180;
-		// Vector3 playerDir = transform.forward;
-		// Vector3 normal = new Vector3(wallrunNormal.x, 0, wallrunNormal.z);
+		Vector3 line = transform.position - contact.point;
+		bool isObjectOnRight;
+		if (Vector3.Dot(transform.right, line) <= 0)
+		{
+			isObjectOnRight = true;
+		}
+		else
+		{
+			isObjectOnRight = false;
+		}
 
-		// float camRot = Vector3.Cross(playerDir, normal).y * angle;
-		// e
+		// Calculate dot product
+		float dotProduct = Vector3.Dot(transform.forward.normalized, wallrunDirection.normalized);
+		if (!isObjectOnRight)
+		{
+			dotProduct *= -1;
+		}
 
-		//float someAngle = 0;
-		//DOTween.To(() => someAngle, x => someAngle = x, cameraRotationAmount * camRot, cameraRotateSpeed)
-		//    .OnUpdate(() =>
-		//    {
-		//        camera.transform.eulerAngles = new Vector3(camera.transform.eulerAngles.x, camera.transform.eulerAngles.y, someAngle);
-		//    });
+		// Use dot product to rotate camera
+		float angle = camera.transform.eulerAngles.z;
+		DOTween.To(() => angle, x => angle = x, cameraRotationAmount * dotProduct, cameraRotateSpeed)
+			.OnUpdate(() =>
+			{
+				camera.transform.eulerAngles = new Vector3(camera.transform.eulerAngles.x, camera.transform.eulerAngles.y, angle);
+			});
 	}
 
 	public IEnumerator StopWallrun()
