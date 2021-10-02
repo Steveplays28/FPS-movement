@@ -286,7 +286,7 @@ public class PlayerController : MonoBehaviour
 					wallrunDirection = Vector3.ProjectOnPlane(transform.forward, contact.normal);
 					wallrunNormal = contact.normal;
 
-					Wallrun();
+					Wallrun(contact);
 				}
 				else if (slopeAngle <= -45f && slopeAngle <= 0)
 				{
@@ -297,7 +297,7 @@ public class PlayerController : MonoBehaviour
 					wallrunDirection = Vector3.ProjectOnPlane(transform.forward, contact.normal);
 					wallrunNormal = contact.normal;
 
-					Wallrun();
+					Wallrun(contact);
 				}
 			}
 		}
@@ -368,11 +368,22 @@ public class PlayerController : MonoBehaviour
 		canWallrun = true;
 	}
 
-	public void Wallrun()
+	public void Wallrun(ContactPoint contact)
 	{
+		Vector3 line = transform.position - contact.point;
+		bool isObjectOnRight;
+		if (Vector3.Dot(transform.right, line) <= 0)
+		{
+			isObjectOnRight = true;
+		}
+		else
+		{
+			isObjectOnRight = false;
+		}
+
 		// Calculate dot product
 		float dotProduct = Vector3.Dot(transform.forward.normalized, wallrunDirection.normalized);
-		if (transform.rotation.eulerAngles.y > 90 && transform.rotation.eulerAngles.y < 270)
+		if (!isObjectOnRight)
 		{
 			dotProduct *= -1;
 		}
@@ -380,7 +391,7 @@ public class PlayerController : MonoBehaviour
 		// Use dot product to rotate camera
 		camera.transform.eulerAngles = new Vector3(camera.transform.eulerAngles.x, camera.transform.eulerAngles.y, cameraRotationAmount * dotProduct);
 
-		Debug.Log("Dot product: " + dotProduct);
+		// Debug.Log("Dot product: " + dotProduct);
 
 		// Stick to wall
 		// rb.AddForce(-wallrunNormal * 100);
