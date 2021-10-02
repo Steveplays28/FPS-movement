@@ -292,6 +292,8 @@ public class PlayerController : MonoBehaviour
 		jumpsLeft = maxJumps;
 		isWallrunning = true;
 
+		ScreenShaker.instance.ShakeScreen(1f, 1f);
+
 		Vector3 line = transform.position - contact.point;
 		bool isObjectOnRight;
 		if (Vector3.Dot(transform.right, line) <= 0)
