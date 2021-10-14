@@ -1,26 +1,37 @@
-using System;
+using System.Collections;
 using UnityEngine;
 
 public class ScreenShaker : MonoBehaviour
 {
 	public static ScreenShaker instance;
+	public AnimationCurve curve;
 
 	private void Awake()
 	{
 		instance = this;
 	}
+
 	public void ShakeScreen(float duration, float magnitude)
 	{
-		Vector3 originalPosition = transform.localPosition;
+		StartCoroutine(ShakeScreenEnum(duration, magnitude));
+	}
 
+	private IEnumerator ShakeScreenEnum(float duration, float magnitude)
+	{
+		Vector3 startPosition = transform.position;
 		float elapsedTime = 0f;
 
 		while (elapsedTime < duration)
 		{
-			float x = UnityEngine.Random.Range(-1f, 1f) * magnitude;
-			float y = UnityEngine.Random.Range(-1f, 1f) * magnitude;
+			elapsedTime += Time.deltaTime;
 
-			transform.localPosition = new Vector3(transform.localPosition.x + x, transform.localPosition.y + y, transform.localPosition.z);
+			Vector3 positionAtFrame = transform.position;
+			float strength = curve.Evaluate(elapsedTime / duration);
+			transform.position = positionAtFrame + Random.insideUnitSphere * strength;
+
+			yield return null;
 		}
+
+		transform.position = startPosition;
 	}
 }

@@ -60,6 +60,7 @@ public class PlayerController : MonoBehaviour
 	{
 		maxSpeed = walkMaxSpeed;
 		Application.targetFrameRate = 30;
+
 	}
 
 	private void Update()
@@ -292,7 +293,8 @@ public class PlayerController : MonoBehaviour
 		jumpsLeft = maxJumps;
 		isWallrunning = true;
 
-		ScreenShaker.instance.ShakeScreen(1f, 1f);
+		// ScreenShaker.instance.ShakeScreen(0.5f, 0.125f);
+		//TODO: implement features https://discord.com/channels/@me/834282615295967232/898327890289127426
 
 		Vector3 line = transform.position - contact.point;
 		bool isObjectOnRight;
