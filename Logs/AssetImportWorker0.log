@@ -1,0 +1,409 @@
+Using pre-set license
+
+ COMMAND LINE ARGUMENTS:
+/Applications/Unity/Unity.app/Contents/MacOS/Unity
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker0
+-projectPath
+/Users/darion/Repos/FPS-movement
+-logFile
+Logs/AssetImportWorker0.log
+-srvPort
+65501
+Successfully changed project path to: /Users/darion/Repos/FPS-movement
+/Users/darion/Repos/FPS-movement
+Using Asset Import Pipeline V2.
+Multiple plugins with the same name 'discord_game_sdk' (found at 'Assets/Plugins/x86_64/discord_game_sdk.bundle' and 'Assets/Plugins/x86_64/discord_game_sdk.dylib'). That means one or more plugins are set to be compatible with Editor. Only one plugin at the time can be used by Editor.
+
+Refreshing native plugins compatible for Editor in 169.49 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 2020.2.1f1 (270dd8c3da1c)
+[Subsystems] Discovering subsystems at path /Applications/Unity/Unity.app/Contents/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path /Users/darion/Repos/FPS-movement/Assets
+GfxDevice: creating device client; threaded=0
+2021-10-01 13:19:24.176 Unity[1439:3844842] Color LCD preferred device: Intel HD Graphics 4000 (low power)
+2021-10-01 13:19:24.176 Unity[1439:3844842] Metal devices available: 1
+2021-10-01 13:19:24.176 Unity[1439:3844842] 0: Intel HD Graphics 4000 (low power)
+2021-10-01 13:19:24.178 Unity[1439:3844842] Using device Intel HD Graphics 4000 (low power)
+Initializing Metal device caps: Intel HD Graphics 4000
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Initialize mono
+Mono path[0] = '/Applications/Unity/Unity.app/Contents/Managed'
+Mono path[1] = '/Applications/Unity/Unity.app/Contents/MonoBleedingEdge/lib/mono/unityjit'
+Mono config path = '/Applications/Unity/Unity.app/Contents/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56439
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: /Applications/Unity/Unity.app/Contents/PlaybackEngines/MacStandaloneSupport/UnityEditor.OSXStandalone.Extensions.dll
+Registered in 0.002487 seconds.
+Native extension for OSXStandalone target not found
+Multiple plugins with the same name 'discord_game_sdk' (found at 'Assets/Plugins/x86_64/discord_game_sdk.bundle' and 'Assets/Plugins/x86_64/discord_game_sdk.dylib'). That means one or more plugins are set to be compatible with Editor. Only one plugin at the time can be used by Editor.
+
+Refreshing native plugins compatible for Editor in 100.16 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  6.218 seconds
+Platform modules already initialized, skipping
+Registering precompiled user dll's ...
+Registered in 0.009285 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for OSXStandalone target not found
+Multiple plugins with the same name 'discord_game_sdk' (found at 'Assets/Plugins/x86_64/discord_game_sdk.bundle' and 'Assets/Plugins/x86_64/discord_game_sdk.dylib'). That means one or more plugins are set to be compatible with Editor. Only one plugin at the time can be used by Editor.
+
+Refreshing native plugins compatible for Editor in 148.97 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  2.939 seconds
+Platform modules already initialized, skipping
+========================================================================
+Worker process is ready to serve import requests
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Launching external process: /Applications/Unity/Unity.app/Contents/Tools/UnityShaderCompiler
+Launched and connected shader compiler UnityShaderCompiler after 0.04 seconds
+Multiple plugins with the same name 'discord_game_sdk' (found at 'Assets/Plugins/x86_64/discord_game_sdk.bundle' and 'Assets/Plugins/x86_64/discord_game_sdk.dylib'). That means one or more plugins are set to be compatible with Editor. Only one plugin at the time can be used by Editor.
+
+Refreshing native plugins compatible for Editor in 1.92 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2552 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 180.4 MB.
+System memory in use after: 180.6 MB.
+
+Unloading 19 unused Assets to reduce memory usage. Loaded Objects now: 2997.
+Total: 24.178412 ms (FindLiveObjects: 1.090653 ms CreateObjectMapping: 0.158530 ms MarkObjects: 22.722249 ms  DeleteObjects: 0.203964 ms)
+
+========================================================================
+Received Import Request.
+  path: Assets/UniversalRenderPipelineAsset.asset
+  artifactKey: Guid(b7baa230cebc74644a96aa5f4aa9fbc3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/UniversalRenderPipelineAsset.asset using Guid(b7baa230cebc74644a96aa5f4aa9fbc3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'df64aa79d1a82e8baa5dca215471afed') in 1.024351 seconds
+  Import took 1.060714 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.001291 seconds.
+  path: Assets/UniversalRenderPipelineAsset_Renderer.asset
+  artifactKey: Guid(73fcf0b44e103cb44812cbf5671dd9d3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/UniversalRenderPipelineAsset_Renderer.asset using Guid(73fcf0b44e103cb44812cbf5671dd9d3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b35e369bc6de16089bdf4ea3d46752ca') in 0.065099 seconds
+  Import took 0.076262 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 3654.699351 seconds.
+  path: Assets/Scenes
+  artifactKey: Guid(dc3633b5be7a67e449586a2534692ea6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes using Guid(dc3633b5be7a67e449586a2534692ea6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '43834812ada06605e5adf79b69b79600') in 0.025040 seconds
+  Import took 0.090449 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.062317 seconds.
+  path: Assets/Scenes
+  artifactKey: Guid(dc3633b5be7a67e449586a2534692ea6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes using Guid(dc3633b5be7a67e449586a2534692ea6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '43834812ada06605e5adf79b69b79600') in 0.002032 seconds
+  Import took 0.014261 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.465356 seconds.
+  path: Assets/Scenes/Main.unity
+  artifactKey: Guid(d64e8b0dec7dcbf478ca3c7257521ee8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/Main.unity using Guid(d64e8b0dec7dcbf478ca3c7257521ee8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '280649add08039f858d9405b25201303') in 0.024895 seconds
+  Import took 0.037470 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.007027 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for OSXStandalone target not found
+Multiple plugins with the same name 'discord_game_sdk' (found at 'Assets/Plugins/x86_64/discord_game_sdk.bundle' and 'Assets/Plugins/x86_64/discord_game_sdk.dylib'). That means one or more plugins are set to be compatible with Editor. Only one plugin at the time can be used by Editor.
+
+Refreshing native plugins compatible for Editor in 0.99 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  3.597 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Multiple plugins with the same name 'discord_game_sdk' (found at 'Assets/Plugins/x86_64/discord_game_sdk.bundle' and 'Assets/Plugins/x86_64/discord_game_sdk.dylib'). That means one or more plugins are set to be compatible with Editor. Only one plugin at the time can be used by Editor.
+
+Refreshing native plugins compatible for Editor in 1.40 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2478 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 180.8 MB.
+System memory in use after: 181.0 MB.
+
+Unloading 14 unused Assets to reduce memory usage. Loaded Objects now: 2999.
+Total: 13.845169 ms (FindLiveObjects: 1.880114 ms CreateObjectMapping: 0.648762 ms MarkObjects: 11.210642 ms  DeleteObjects: 0.100611 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.004701 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for OSXStandalone target not found
+Multiple plugins with the same name 'discord_game_sdk' (found at 'Assets/Plugins/x86_64/discord_game_sdk.bundle' and 'Assets/Plugins/x86_64/discord_game_sdk.dylib'). That means one or more plugins are set to be compatible with Editor. Only one plugin at the time can be used by Editor.
+
+Refreshing native plugins compatible for Editor in 3.35 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  3.087 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Multiple plugins with the same name 'discord_game_sdk' (found at 'Assets/Plugins/x86_64/discord_game_sdk.bundle' and 'Assets/Plugins/x86_64/discord_game_sdk.dylib'). That means one or more plugins are set to be compatible with Editor. Only one plugin at the time can be used by Editor.
+
+Refreshing native plugins compatible for Editor in 2.68 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2478 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 181.0 MB.
+System memory in use after: 181.3 MB.
+
+Unloading 14 unused Assets to reduce memory usage. Loaded Objects now: 3001.
+Total: 7.077752 ms (FindLiveObjects: 0.504140 ms CreateObjectMapping: 0.503496 ms MarkObjects: 5.975466 ms  DeleteObjects: 0.092147 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 4025.270210 seconds.
+  path: Assets/Scripts/PlayerController.cs
+  artifactKey: Guid(be76e5f14cfee674cb30b491fb72b09b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/PlayerController.cs using Guid(be76e5f14cfee674cb30b491fb72b09b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '394de24000c144ee4d1834612f8de0d7') in 2.308490 seconds
+  Import took 2.706310 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.201401 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for OSXStandalone target not found
+Multiple plugins with the same name 'discord_game_sdk' (found at 'Assets/Plugins/x86_64/discord_game_sdk.bundle' and 'Assets/Plugins/x86_64/discord_game_sdk.dylib'). That means one or more plugins are set to be compatible with Editor. Only one plugin at the time can be used by Editor.
+
+Refreshing native plugins compatible for Editor in 6.90 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  6.674 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Multiple plugins with the same name 'discord_game_sdk' (found at 'Assets/Plugins/x86_64/discord_game_sdk.bundle' and 'Assets/Plugins/x86_64/discord_game_sdk.dylib'). That means one or more plugins are set to be compatible with Editor. Only one plugin at the time can be used by Editor.
+
+Refreshing native plugins compatible for Editor in 1.74 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2479 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 185.5 MB.
+System memory in use after: 185.8 MB.
+
+Unloading 14 unused Assets to reduce memory usage. Loaded Objects now: 3004.
+Total: 35.904062 ms (FindLiveObjects: 6.319322 ms CreateObjectMapping: 0.836071 ms MarkObjects: 28.583794 ms  DeleteObjects: 0.161076 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.002952 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for OSXStandalone target not found
+Multiple plugins with the same name 'discord_game_sdk' (found at 'Assets/Plugins/x86_64/discord_game_sdk.bundle' and 'Assets/Plugins/x86_64/discord_game_sdk.dylib'). That means one or more plugins are set to be compatible with Editor. Only one plugin at the time can be used by Editor.
+
+Refreshing native plugins compatible for Editor in 1.54 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  2.953 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Multiple plugins with the same name 'discord_game_sdk' (found at 'Assets/Plugins/x86_64/discord_game_sdk.bundle' and 'Assets/Plugins/x86_64/discord_game_sdk.dylib'). That means one or more plugins are set to be compatible with Editor. Only one plugin at the time can be used by Editor.
+
+Refreshing native plugins compatible for Editor in 0.87 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2479 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 185.8 MB.
+System memory in use after: 186.0 MB.
+
+Unloading 14 unused Assets to reduce memory usage. Loaded Objects now: 3006.
+Total: 11.210880 ms (FindLiveObjects: 0.850378 ms CreateObjectMapping: 0.269701 ms MarkObjects: 9.682088 ms  DeleteObjects: 0.403349 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.004139 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for OSXStandalone target not found
+Multiple plugins with the same name 'discord_game_sdk' (found at 'Assets/Plugins/x86_64/discord_game_sdk.bundle' and 'Assets/Plugins/x86_64/discord_game_sdk.dylib'). That means one or more plugins are set to be compatible with Editor. Only one plugin at the time can be used by Editor.
+
+Refreshing native plugins compatible for Editor in 1.57 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  2.579 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Multiple plugins with the same name 'discord_game_sdk' (found at 'Assets/Plugins/x86_64/discord_game_sdk.bundle' and 'Assets/Plugins/x86_64/discord_game_sdk.dylib'). That means one or more plugins are set to be compatible with Editor. Only one plugin at the time can be used by Editor.
+
+Refreshing native plugins compatible for Editor in 0.91 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2479 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 185.9 MB.
+System memory in use after: 186.1 MB.
+
+Unloading 14 unused Assets to reduce memory usage. Loaded Objects now: 3008.
+Total: 7.277593 ms (FindLiveObjects: 0.517564 ms CreateObjectMapping: 0.372687 ms MarkObjects: 6.292439 ms  DeleteObjects: 0.090164 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.006726 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for OSXStandalone target not found
+Multiple plugins with the same name 'discord_game_sdk' (found at 'Assets/Plugins/x86_64/discord_game_sdk.bundle' and 'Assets/Plugins/x86_64/discord_game_sdk.dylib'). That means one or more plugins are set to be compatible with Editor. Only one plugin at the time can be used by Editor.
+
+Refreshing native plugins compatible for Editor in 3.07 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  3.025 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Multiple plugins with the same name 'discord_game_sdk' (found at 'Assets/Plugins/x86_64/discord_game_sdk.bundle' and 'Assets/Plugins/x86_64/discord_game_sdk.dylib'). That means one or more plugins are set to be compatible with Editor. Only one plugin at the time can be used by Editor.
+
+Refreshing native plugins compatible for Editor in 0.94 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2479 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 186.2 MB.
+System memory in use after: 186.4 MB.
+
+Unloading 14 unused Assets to reduce memory usage. Loaded Objects now: 3010.
+Total: 11.790449 ms (FindLiveObjects: 0.474961 ms CreateObjectMapping: 0.372953 ms MarkObjects: 10.603959 ms  DeleteObjects: 0.334389 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.002994 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for OSXStandalone target not found
+Multiple plugins with the same name 'discord_game_sdk' (found at 'Assets/Plugins/x86_64/discord_game_sdk.bundle' and 'Assets/Plugins/x86_64/discord_game_sdk.dylib'). That means one or more plugins are set to be compatible with Editor. Only one plugin at the time can be used by Editor.
+
+Refreshing native plugins compatible for Editor in 0.97 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  2.857 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Multiple plugins with the same name 'discord_game_sdk' (found at 'Assets/Plugins/x86_64/discord_game_sdk.bundle' and 'Assets/Plugins/x86_64/discord_game_sdk.dylib'). That means one or more plugins are set to be compatible with Editor. Only one plugin at the time can be used by Editor.
+
+Refreshing native plugins compatible for Editor in 1.28 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2479 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 186.4 MB.
+System memory in use after: 186.6 MB.
+
+Unloading 14 unused Assets to reduce memory usage. Loaded Objects now: 3012.
+Total: 10.083885 ms (FindLiveObjects: 1.414722 ms CreateObjectMapping: 0.518010 ms MarkObjects: 6.786651 ms  DeleteObjects: 1.360822 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.004198 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for OSXStandalone target not found
+Multiple plugins with the same name 'discord_game_sdk' (found at 'Assets/Plugins/x86_64/discord_game_sdk.bundle' and 'Assets/Plugins/x86_64/discord_game_sdk.dylib'). That means one or more plugins are set to be compatible with Editor. Only one plugin at the time can be used by Editor.
+
+Refreshing native plugins compatible for Editor in 5.61 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in 13.500 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Multiple plugins with the same name 'discord_game_sdk' (found at 'Assets/Plugins/x86_64/discord_game_sdk.bundle' and 'Assets/Plugins/x86_64/discord_game_sdk.dylib'). That means one or more plugins are set to be compatible with Editor. Only one plugin at the time can be used by Editor.
+
+Refreshing native plugins compatible for Editor in 8.26 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2479 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 186.6 MB.
+System memory in use after: 186.8 MB.
+
+Unloading 14 unused Assets to reduce memory usage. Loaded Objects now: 3014.
+Total: 23.514905 ms (FindLiveObjects: 1.446113 ms CreateObjectMapping: 0.695747 ms MarkObjects: 21.177140 ms  DeleteObjects: 0.189545 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.018758 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for OSXStandalone target not found
+Multiple plugins with the same name 'discord_game_sdk' (found at 'Assets/Plugins/x86_64/discord_game_sdk.bundle' and 'Assets/Plugins/x86_64/discord_game_sdk.dylib'). That means one or more plugins are set to be compatible with Editor. Only one plugin at the time can be used by Editor.
+
+Refreshing native plugins compatible for Editor in 6.69 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in 16.225 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Multiple plugins with the same name 'discord_game_sdk' (found at 'Assets/Plugins/x86_64/discord_game_sdk.bundle' and 'Assets/Plugins/x86_64/discord_game_sdk.dylib'). That means one or more plugins are set to be compatible with Editor. Only one plugin at the time can be used by Editor.
+
+Refreshing native plugins compatible for Editor in 6.03 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2479 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 186.7 MB.
+System memory in use after: 187.0 MB.
+
+Unloading 14 unused Assets to reduce memory usage. Loaded Objects now: 3016.
+Total: 29.731880 ms (FindLiveObjects: 2.744855 ms CreateObjectMapping: 1.002920 ms MarkObjects: 25.746118 ms  DeleteObjects: 0.231201 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.113282 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for OSXStandalone target not found
+Multiple plugins with the same name 'discord_game_sdk' (found at 'Assets/Plugins/x86_64/discord_game_sdk.bundle' and 'Assets/Plugins/x86_64/discord_game_sdk.dylib'). That means one or more plugins are set to be compatible with Editor. Only one plugin at the time can be used by Editor.
+
+Refreshing native plugins compatible for Editor in 9.46 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in 19.583 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Multiple plugins with the same name 'discord_game_sdk' (found at 'Assets/Plugins/x86_64/discord_game_sdk.bundle' and 'Assets/Plugins/x86_64/discord_game_sdk.dylib'). That means one or more plugins are set to be compatible with Editor. Only one plugin at the time can be used by Editor.
+
+Refreshing native plugins compatible for Editor in 2.40 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2479 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 187.0 MB.
+System memory in use after: 187.2 MB.
+
+Unloading 14 unused Assets to reduce memory usage. Loaded Objects now: 3018.
+Total: 23.794877 ms (FindLiveObjects: 1.593388 ms CreateObjectMapping: 1.102867 ms MarkObjects: 20.862685 ms  DeleteObjects: 0.218001 ms)
+
