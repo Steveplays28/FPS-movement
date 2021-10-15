@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
 	[Header("Player")]
 	public new Camera camera;
 	public Rigidbody rb;
+	public Collider wallCollider;
 
 	private Vector3 localVelocity;
 
@@ -40,12 +41,15 @@ public class PlayerController : MonoBehaviour
 	[Header("Wallrunning")]
 	public float cameraRotateSpeed = 0.5f;
 	public float cameraRotationAmount = 25f;
+	public float maxWallrunDuration = 2f;
 	public float wallrunTimeout = 2f;
 	public bool canWallrun = true;
 	public bool isWallrunning;
 
 	private Vector3 wallrunDirection;
 	private Vector3 wallrunNormal;
+	private float wallrunStartTime;
+	private float wallrunDuration;
 
 	[Header("Jumping")]
 	public int jumpHeight;
@@ -59,8 +63,6 @@ public class PlayerController : MonoBehaviour
 	private void Start()
 	{
 		maxSpeed = walkMaxSpeed;
-		Application.targetFrameRate = 30;
-
 	}
 
 	private void Update()
@@ -216,26 +218,28 @@ public class PlayerController : MonoBehaviour
 		{
 			isGrounded = true;
 			jumpsLeft = maxJumps;
+			canWallrun = true;
 		}
 
-		if (slopeAngle >= 45f && slopeAngle >= 0)
+		if (!collision.contacts[0].thisCollider.CompareTag("Wall collider"))
 		{
-			// wallrunDirection = Quaternion.AngleAxis(90, Vector3.up) * normal;
-			wallrunNormal = normal;
-
-			StartWallrun(collision.GetContact(0));
+			return;
 		}
-		else if (slopeAngle <= -45f && slopeAngle <= 0)
-		{
-			// wallrunDirection = Quaternion.AngleAxis(-90, Vector3.up) * normal;
-			wallrunNormal = normal;
 
+		if ((slopeAngle >= 45f && slopeAngle >= 0) || (slopeAngle <= -45f && slopeAngle <= 0))
+		{
+			wallrunNormal = normal;
 			StartWallrun(collision.GetContact(0));
 		}
 	}
 
 	private void OnCollisionStay(Collision collision)
 	{
+		if (!collision.contacts[0].thisCollider.CompareTag("Wall collider"))
+		{
+			return;
+		}
+
 		Vector3 normal = collision.GetContact(0).normal;
 		float slopeAngle;
 		slopeAngle = Vector3.Angle(normal, Vector3.up);
@@ -280,6 +284,11 @@ public class PlayerController : MonoBehaviour
 
 	private void OnCollisionExit(Collision collision)
 	{
+		if (!isWallrunning)
+		{
+			return;
+		}
+
 		StartCoroutine(StopWallrun());
 	}
 	#endregion
@@ -287,6 +296,14 @@ public class PlayerController : MonoBehaviour
 	#region Wallrunning
 	public void StartWallrun(ContactPoint contact)
 	{
+		if (!canWallrun)
+		{
+			return;
+		}
+
+		wallrunStartTime = Time.time;
+		wallrunDuration = 0f;
+
 		isGrounded = true;
 		rb.useGravity = false;
 		rb.velocity = new Vector3(rb.velocity.x, 0, rb.velocity.z);
@@ -315,12 +332,28 @@ public class PlayerController : MonoBehaviour
 		}
 
 		// Use dot product to rotate camera
-		float angle = camera.transform.eulerAngles.z;
-		DOTween.To(() => angle, x => angle = x, cameraRotationAmount * dotProduct, cameraRotateSpeed)
+		camera.transform.DORotate(new Vector3(camera.transform.eulerAngles.x, camera.transform.eulerAngles.y, camera.transform.eulerAngles.z + cameraRotationAmount * dotProduct), cameraRotateSpeed)
 			.OnUpdate(() =>
 			{
-				camera.transform.eulerAngles = new Vector3(camera.transform.eulerAngles.x, camera.transform.eulerAngles.y, angle);
+				float dotProduct = Vector3.Dot(transform.forward.normalized, wallrunDirection.normalized);
+				if (!isObjectOnRight)
+				{
+					dotProduct *= -1;
+				}
 			});
+
+		// float angle = camera.transform.eulerAngles.z;
+		// DOTween.To(() => angle, x => angle = x, cameraRotationAmount * dotProduct, cameraRotateSpeed)
+		// 	.OnUpdate(() =>
+		// 	{
+		// 		dotProduct = Vector3.Dot(transform.forward.normalized, wallrunDirection.normalized);
+		// 		if (!isObjectOnRight)
+		// 		{
+		// 			dotProduct *= -1;
+		// 		}
+
+		// 		camera.transform.eulerAngles = new Vector3(camera.transform.eulerAngles.x, camera.transform.eulerAngles.y, angle);
+		// 	});
 	}
 
 	public IEnumerator StopWallrun()
@@ -331,7 +364,6 @@ public class PlayerController : MonoBehaviour
 		isWallrunning = false;
 		canWallrun = false;
 
-		Debug.Log("Stop wallrun");
 		float angle = camera.transform.eulerAngles.z;
 		float zero;
 		if (angle > 180)
@@ -354,6 +386,17 @@ public class PlayerController : MonoBehaviour
 
 	public void Wallrun(ContactPoint contact)
 	{
+		if (!canWallrun)
+		{
+			return;
+		}
+
+		if (wallrunDuration >= maxWallrunDuration)
+		{
+			StartCoroutine(StopWallrun());
+			return;
+		}
+
 		Vector3 line = transform.position - contact.point;
 		bool isObjectOnRight;
 		if (Vector3.Dot(transform.right, line) <= 0)
@@ -400,6 +443,8 @@ public class PlayerController : MonoBehaviour
 				rb.AddForce(wallrunDirection * -Vector3.Dot(rb.velocity, wallrunDirection) * counterAcceleration, ForceMode.Force);
 			}
 		}
+
+		wallrunDuration = Time.time - wallrunStartTime;
 	}
 	#endregion
 
