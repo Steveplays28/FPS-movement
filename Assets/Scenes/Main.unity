@@ -349,8 +349,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1658563883}
-  sensX: 100
-  sensY: 100
+  sensX: 500
+  sensY: 500
   clampAngle: 90
 --- !u!114 &438515093
 MonoBehaviour:
@@ -871,6 +871,7 @@ MonoBehaviour:
   canMoveLAndR: 1
   cameraRotateSpeed: 0.5
   cameraRotationAmount: 15
+  maxWallrunDuration: 2
   wallrunTimeout: 1
   canWallrun: 1
   isWallrunning: 0
